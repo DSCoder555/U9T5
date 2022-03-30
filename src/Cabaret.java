@@ -54,4 +54,26 @@ public class Cabaret {
         }
         return overAged;
     }
+
+    public void groupRehearsal(){
+        for (Performer performer : performers){
+            System.out.println("REHEARSAL CALL! " + performer.getName());
+            if (performer instanceof Comedian){
+                ((Comedian) performer).rehearse(false);
+            }
+            else{
+                performer.rehearse();
+            }
+        }
+    }
+
+    public void cabaretShow(){
+        for (Performer performer : performers){
+            System.out.println("Welcome to the cabaret!  Next act up... " + performer.getName());
+            if (performer instanceof Dancer){
+                ((Dancer) performer).pirouette(2);
+            }
+            performer.perform();
+        }
+    }
 }
